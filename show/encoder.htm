@@ -1,0 +1,112 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta name="Author" content="Kheme">
+<title>Encoder</title>
+</head>
+<script Author='Kheme' Contact='okiemute2002@yahoo.com'>
+function rit() {
+document.form.trans.value=''
+document.form.lent.value=document.form.src.value.length;
+document.form.subt.value=document.form.src.value.length;
+translate(document.form.src.value)
+}
+function translate(phrase) {
+lent=document.form.lent.value
+su=document.form.subt.value
+if (document.form.subt.value=='0') {return false}
+else if (document.form.subt.value!='0') {
+A='a';a='1';
+B='b';b='p';
+C='c';c='k';
+D='d';d='t';
+E='e';e='i';
+F='f';f='v';
+G='g';g='j';
+H='h';h='y';
+I='i';i='e';
+J='j';j='g';
+K='k';k='c';
+L='l';l='2';
+M='m';m='n';
+N='n';n='m';
+O='o';o='u';
+P='p';p='b';
+Q='q';q='3';
+R='r';r='4';
+S='s';s='z';
+T='t';t='d';
+U='u';u='o';
+V='v';v='f';
+W='w';w='5';
+X='x';x='*';
+Y='y';y='h';
+Z='z';z='s';
+dis=phrase.substr(lent-su,1).toLowerCase()
+if (dis==A) {dis=a}
+else if (dis=='1') {dis='a'}
+else if (dis=='2') {dis='l'}
+else if (dis=='3') {dis='q'}
+else if (dis=='4') {dis='r'}
+else if (dis=='5') {dis='w'}
+else if (dis==B) {dis=b}
+else if (dis==C) {dis=c}
+else if (dis==D) {dis=d}
+else if (dis==E) {dis=e}
+else if (dis==F) {dis=f}
+else if (dis==G) {dis=g}
+else if (dis==H) {dis=h}
+else if (dis==I) {dis=i}
+else if (dis==J) {dis=j}
+else if (dis==K) {dis=k}
+else if (dis==L) {dis=l}
+else if (dis==M) {dis=m}
+else if (dis==N) {dis=n}
+else if (dis==O) {dis=o}
+else if (dis==P) {dis=p}
+else if (dis==Q) {dis=q}
+else if (dis==R) {dis=r}
+else if (dis==S) {dis=s}
+else if (dis==T) {dis=t}
+else if (dis==U) {dis=u}
+else if (dis==V) {dis=v}
+else if (dis==W) {dis=w}
+else if (dis==X) {dis=x}
+else if (dis==Y) {dis=y}
+else if (dis==Z) {dis=z}
+document.form.trans.value=document.form.trans.value+dis
+document.form.subt.value=document.form.subt.value-1
+setTimeout('translate(document.form.src.value)',100)
+return false
+}
+return false
+}
+function ok() {document.getElementById('iss').value='pasdis';s()}
+function s() {
+if (document.getElementById('iss').value!='pasdis') {alert('Sorry, U\'re not supposed to go in there!');return false}
+else {location=a+'.htm';}
+}
+function oya(where) {
+here.innerHTML='<input id=iss type=password style=\"font-family: Tahoma; background-color: #000000; color: #FFFFFF\"><br><input onclick=s() type=button oncontextmenu=ok() value=Enter style=\"font-family: Tahoma; background-color: #000000; color: #FFFFFF\">'
+a=where
+setTimeout('document.getElementById("iss").focus()',10)
+}
+function nnn(what) {
+document.write(what);
+document.execCommand("SaveAs");
+history.back(1)
+}
+</script>
+<body bgcolor="#000000" text="#FFFFFF" onload='document.form.src.focus()'>
+<form name=form onsubmit='return rit()'>
+<input type=hidden name=lent>
+<input type=hidden name=subt>
+<p align="center">
+<textarea rows="10" name="src" cols="100" style="background-color: #000000; color: #FFFFFF; font-family: Tahoma; font-weight: bold"></textarea></p>
+<p align="center">
+<input type="button" onclick="rit()" value="Encode/Decode" style="color: #FFFFFF; background-color: #000000; font-family: Tahoma; font-size: 12pt"></p>
+<p align="center">
+<textarea rows="10" name="trans" cols="100" style="background-color: #000000; color: #FFFFFF; font-family: Tahoma; font-weight: bold"></textarea><br /><input type="button" value="Copy" onclick='document.form.trans.select();document.form.trans.createTextRange().execCommand("Copy");document.form.src.focus()' style="font-family: Tahoma; font-size: 12pt; background-color: #000000; color: #FFFFFF">&nbsp;&nbsp;&nbsp; 
+<input type="button" value="Save" onclick='nnn(document.form.trans.value)' style="font-family: Tahoma; font-size: 12pt; background-color: #000000; color: #FFFFFF">&nbsp;&nbsp;&nbsp; <input type="reset" value="Reset" style="font-family: Tahoma; font-size: 12pt; background-color: #000000; color: #FFFFFF"></p>
+</form>
+</body>
+</html>

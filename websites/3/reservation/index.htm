@@ -1,0 +1,283 @@
+<?require "../admin/conn";?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<title>Mimoza Beach Hotel - Welcome - A beautiful expression of hospitality, a rear definition of eleganc</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="Author" content="BackandFront">
+<meta name="Client" content="Excalibur Benin Hotel">
+<meta name="robots" content="all">
+<link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body style="background-image: url('../images/bg.jpg')">
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="0" width="765" bordercolor="#4786b2">
+<tr>
+<td>
+<div align="center">
+<table width="760" cellpadding="0" id="table3" style="border-collapse: collapse">
+<tr>
+<td width="12" style="background-image: url('../images/nav_left.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-position:   right center; ">&nbsp;</td>
+<td width="96%" height="23" background="../images/nav_center.jpg" style="background-image: url('../images/nav_center.jpg'); background-repeat: repeat-x; background-attachment: fixed; background-position: left center">
+<p align="right">Select Language: <b>English</b> | Turkish</td>
+<td width="2%" style="background-image: url('../images/nav_right.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-position: center">&nbsp;</td>
+</tr>
+</table>
+<table border="0" cellpadding="0" width="760" style="border-collapse: collapse" bordercolor="#4786b2" bgcolor="#F9F9F9">
+<tr>
+<td width="200" style="border:2px solid #4786B2; ">
+<img border="0" src="../images/hd_reserve.jpg" width="756" height="122"></td>
+</tr>
+</table>
+</div>
+<div align="center">
+<table width="760" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" id="table4">
+<tr>
+<td width="137" valign="top">
+<table width="138"border="0" cellspacing="0" cellpadding="0" style="border-right: 1px solid #C0C0C0" id="table9">
+<tr>
+<td width="7%"><img src="../images/nav_left.jpg" width="14" height="21"></td>
+<td width="84%" height="20" background="../images/nav_center.jpg">
+<font color="#000080"><a href="../index.htm">Home</a></font></td>
+</tr>
+<tr>
+<td><img src="../images/nav_left.jpg" width="14" height="21"></td>
+<td height="20" background="../images/nav_center.jpg">
+<a onMouseOver="document.all.navdes.innerHTML='Services we offer'" onMouseOut="document.all.navdes.innerHTML=''" title="Servics we offer" href="../services.htm">Services</a></td>
+</tr>
+<tr>
+<td><img src="../images/nav_left.jpg" width="14" height="21"></td>
+<td height="20" background="../images/nav_center.jpg">
+<font color="#000080"><a href="../location.htm">Location</a></font></td>
+</tr>
+<tr>
+<td><img src="../images/nav_left.jpg" width="14" height="21"></td>
+<td height="20" background="../images/nav_center.jpg">
+<font color="#000080"><b>Reservations</b></font></td>
+</tr>
+<tr>
+<td><img src="../images/nav_left.jpg" width="14" height="21"></td>
+<td height="20" background="../images/nav_center.jpg">
+<a href="../gallery.htm" onMouseOver="document.all.navdes.innerHTML='Take a virtual Tour of Mimoza Beach Hotel'" onMouseOut="document.all.navdes.innerHTML=''" title="Visual Tour of Excalibur Benin Hotel">Gallery</a></td>
+</tr>
+<tr>
+<td><img src="../images/nav_left.jpg" width="14" height="21"></td>
+<td height="20" background="../images/nav_center.jpg">
+<a onMouseOver="document.all.navdes.innerHTML='Our contact information'" onMouseOut="document.all.navdes.innerHTML=''" href="../contact.htm" title="Our contact information">Contact Us</a></td>
+</tr>
+</table><div height="26" colspan="3" id="navdes" style="font:10px verdana;">&nbsp;</div></td>
+<td width="472" align="left" valign="top">
+<div align="center">
+<table width="100%" border="0" cellpadding="0" cellspacing="5">
+<tr>
+<td height="20" valign="top" bgcolor="#FFFFFF" class="around" style="padding:5px;line-height:130%">
+<b>:: Online Reservations</b>
+<?
+if (!$_POST) {
+?>- <strong>Mimoza Beach Hotel</strong><p>All our rooms are double with balconies overlooking the sea! Each room is 
+furnished with a shower, WC, air-conditioning, satellite TV, a mini-bar and an 
+international phone line.</p>
+<p>Coming to Mimoza? Let's prepare your space before you arrive! 
+Simply fill this form to request for reservation(s) at Mimoza Beach Hotel...</p>
+<hr noshade size="1" color="#4786B2">
+<form method="POST" action="index.htm" onsubmit="return chk()" name="form">
+<table width="80%"border="0" cellspacing="1" cellpadding="0" id="table7">
+<tr>
+<td width="35%">Name:</td>
+<td width="65%"><input type="text" name="name" onmouseover=this.focus() size="20"></td>
+</tr>
+<tr>
+<td width="35%">Email address:</td>
+<td width="65%"><input type="text" name="email" onmouseover=this.focus() size="20"></td>
+</tr>
+<tr>
+<td>Mobile:</td>
+<td><input name="mob" type="text" onmouseover=this.focus() size="20"></td>
+</tr>
+<tr>
+<td width="35%">Arrival date: </td>
+<td width="65%">
+<select name="ind0" size="1">
+<?
+for ($a=1;$a<32;$a++) {
+if ($a==date("d") || @$_GET['ind']==$a) {echo "<option selected>$a";}
+else {echo "<option>$a";}
+}
+?>
+</SELECT>
+ <select name="ind" size="1">
+<?
+for ($a=1;$a<32;$a++) {
+if ($a==date("d") || @$_GET['ind']==$a) {echo "<option selected>$a";}
+else {echo "<option>$a";}
+}
+?>
+</SELECT>
+ <select name="ind5" size="1">
+<?
+for ($a=1;$a<32;$a++) {
+if ($a==date("d") || @$_GET['ind']==$a) {echo "<option selected>$a";}
+else {echo "<option>$a";}
+}
+?>
+</SELECT></td>
+</tr>
+<tr>
+<td>Departure date:</td>
+<td>
+<select name="ind1" size="1">
+<?
+for ($a=1;$a<32;$a++) {
+if ($a==date("d") || @$_GET['ind']==$a) {echo "<option selected>$a";}
+else {echo "<option>$a";}
+}
+?>
+</SELECT>
+ <select name="outd" size="1">
+<?
+for ($a=0;$a<31;$a++) {
+ if ($a==date("d") || @$_GET['outd']==abs($a+1)) {echo "<option selected>".abs($a+1);}
+ else {echo "<option>".abs($a+1);}
+}
+?>
+</SELECT>
+ <select name="ind6" size="1">
+<?
+for ($a=1;$a<32;$a++) {
+if ($a==date("d") || @$_GET['ind']==$a) {echo "<option selected>$a";}
+else {echo "<option>$a";}
+}
+?>
+</SELECT></td>
+</tr>
+<tr>
+<td>No. of Rooms:</td>
+<td>
+<select name="ind2" size="1">
+<?
+for ($a=1;$a<32;$a++) {
+if ($a==date("d") || @$_GET['ind']==$a) {echo "<option selected>$a";}
+else {echo "<option>$a";}
+}
+?>
+</SELECT></td>
+</tr>
+<tr>
+<td>Adults per Room : </td>
+<td>
+<select name="ind3" size="1">
+<?
+for ($a=1;$a<32;$a++) {
+if ($a==date("d") || @$_GET['ind']==$a) {echo "<option selected>$a";}
+else {echo "<option>$a";}
+}
+?>
+</SELECT></td>
+</tr>
+<tr>
+<td>Children per Room: </td>
+<td>
+<select name="ind4" size="1">
+<?
+for ($a=1;$a<32;$a++) {
+if ($a==date("d") || @$_GET['ind']==$a) {echo "<option selected>$a";}
+else {echo "<option>$a";}
+}
+?>
+</SELECT></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td height="20">&nbsp;</td>
+<td height="20"><input type="submit" name="Submit" value="Submit">&nbsp;&nbsp;&nbsp; <input type="reset" name="Reset" value="Reset"></td>
+</tr>
+</table>
+</form>
+<?
+}
+else {
+$name=$_POST['name'];
+$email=$_POST['email'];
+$ind=$_POST['ind'];
+$outd=$_POST['outd'];
+$inm=$_POST['inm'];
+$outm=$_POST['outm'];
+$iny=$_POST['iny'];
+$outy=$_POST['outy'];
+$rooms=$_POST['rooms'];
+$child=$_POST['child'];
+$adult=$_POST['adult'];
+$mob=$_POST['mob'];
+$date=date("D[d]-M-Y");
+$id=date("U");
+$letter=array("0","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+$array=array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+$code=substr($id,5,10)*date("d").$letter[substr($id,-1)];
+if (abs($iny.$inm.$ind)<abs(date("Y").date("n").date("j"))) {
+echo "<p><font color=red>Invalid arrival date!</font><br> Please go back and enter a valid date!</p>";
+echo "<p><a href=javascript:history.go(-1)>Back</a></p><p>&nbsp;</p>";
+}
+else if (($outy.$outm.$outd)<(date("Y").date("n").date("j"))) {
+echo "<p><font color=red>Invalid departure date!</font><br> Please go back and enter a valid date!</p>";
+echo "<p><a href=javascript:history.go(-1)>Back</a></p><p>&nbsp;</p>";
+}
+else {
+$in="$ind-$array[$inm]-$iny";
+$out="$outd-$array[$outm]-$outy";
+
+$eee='<P style="FONT-SIZE: 9pt; FONT-FAMILY: verdana">Dear $name, this is an email to confirm the hotel reservation you made the the&nbsp;Excalibur Benin Hotel website; please take note of the following information for they have to be presented at the hotel for reservation verification at your arrival.</P>
+<P style="FONT-SIZE: 9pt; FONT-FAMILY: verdana" align=center><FONT color=#4786b2><B>Reservation details for $name - $date</B></FONT></P>
+<P style="FONT-SIZE: 9pt; FONT-FAMILY: verdana"><B>Reservation Code: </B>$code<B><BR>Request Date:</B> $date<BR><B>Email:</B> $email<BR><B>Arrival Date:</B> $in<BR><B>Departure Date: </B>$out<BR><B>Number of Rooms:</B> $rooms<BR><B>Adults per Room:</B> $adult<BR><B>Child per Room: </B>$child<BR><BR>Please note your reservation code, rooms will not be allocated without your reservation code!</P>
+<P style="FONT-SIZE: 9pt; FONT-FAMILY: verdana">Please <A href="http://www.xdavia.com/www.mimozabeachotel.com/" target=_blank>click here</A> to confirm or cancel this reservation request to Excalibur Benin Hotel.</P>
+<P style="FONT-SIZE: 9pt; FONT-FAMILY: verdana">Thanks and have a nice day!</P>
+<P style="FONT-SIZE: 9pt; FONT-FAMILY: verdana"><A href="http://www.xdavia.com/www.mimozabeachotel.com/"><STRONG>Mimoza Beach Hotel</STRONG></A> - A beautiful expression of hospitality, a rear definition of elegance</P>';
+
+$mail=str_replace('$address',address,str_replace('$email',$email,str_replace('$out',$out,str_replace('$in',$in,str_replace('$code',$code,str_replace('$date',$date,str_replace('$rooms',$rooms,str_replace('$child',$child,str_replace('$adult',$adult,str_replace('$name',$name,$eee))))))))));
+
+//if ($mail=str_replace('$address',address,str_replace('$email',$email,str_replace('$out',$out,str_replace('$in',$in,str_replace('$code',$code,str_replace('$date',$date,str_replace('$rooms',$rooms,str_replace('$child',$child,str_replace('$adult',$adult,str_replace('$name',$name,email()))))))))))) {
+$header= "MIME-Version: 1.0\r\n";
+$header .= "Content-type: text/html; charset=iso-8859-1\r\n";
+$header .= "From: Hotel Reservation <reservation@mimozabeachotel.com>\r\n";
+$header .= "Bcc: reservation@mimozabeachotel.com\r\n";
+@mail($email,'Please confirm your reservation at Mimoza Beach Hotel!',$mail,$header);
+//q("i,reserve:$name,$email,$mob,$rooms,$child,$adult,$in,$out,$date,$code,Revd,$id");
+//$roomsl=re(q("s,hotel"),0,'room')-1;
+//q("u,hotel:room=$roomsl");
+echo "<p>$name, your reservation request has been sent, but you must go to your email [<b>$email</b>] and confirm this reservation.</p>";
+echo "<p>Thank you for choosing Mimoza Beach Hotel... we would be expecting you soon!</p>";
+//}
+//else {echo "<p>Your reservation request cannot be submitted at the moment, please try again later!</p>";}
+}
+}
+?></td>
+</tr>
+</table>
+</div>
+</td>
+<td width="145" align="center" valign="top">
+<img border="0" src="../images/img4.gif" width="150" height="110" hspace="0" vspace="1"><br /><br /><img border="0" src="../images/img5.gif" width="150" height="104" hspace="0"><br /><br /><img border="0" src="../images/img6.gif" width="150" height="104" hspace="0"></td>
+</tr>
+</table>
+</div></td>
+</tr>
+<tr><td><hr noshade color="#4786B2" size="1"></td></tr>
+</table>
+</div>
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="0" width="760" id="table8">
+<tr>
+<td bgcolor="#FCFCFC" style="border: 1px solid #EFEFEF">
+<p align="center">Home - Services - Location - Reservations - Tour Hotel - Vacancies - 
+Contact Us</p>
+<p align="center">Mimoza Beach Hotel, Famagusta, North Cyprus, 
+Mersin 10, Turkey<b><br />Telephone: </b>0090 392 3788219 | <b>Fax:</b> 0090 392 3789077 | <b>Email: </b>info@mimozabeachotel.com</p>
+<p align="center">Copyright 2006, Mimoza Beach Hotel. All rights 
+reserved.</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

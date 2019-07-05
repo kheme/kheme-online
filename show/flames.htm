@@ -1,0 +1,129 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="Author" content="Kheme">
+<meta name="Contact Address" content="kheme@msn.com">
+<title>First Name</title>
+</head>
+<body onload=yes();doCl()>
+<form name="f" onsubmit="return Now()">
+<input name="n1" type="hidden">
+<input name="n2" type="hidden">
+<input name="f" type="hidden">
+<input name="subt" type="hidden">
+<script>
+function doCl() {
+dayName=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+monName=new Array("January","Febuary","March","April","May","June","July","August","September","October","November","December")
+now=new Date
+if (now.getMinutes()<10) {min=now.getMinutes()+0}
+if (now.getMinutes()>9) {min=now.getMinutes()}
+if (now.getMinutes()<10) {min=now.getMinutes()+0}
+if (now.getMinutes()>9) {min=now.getMinutes()}
+window.status="Today is "+dayName[now.getDay()]+", "+monName[now.getMonth()]+" "+now.getDate()+' '+now.getYear()+". Your system time says: "+now.getHours()+":"+min
+setTimeout('doCl()', 500)
+}
+function yes() {
+document.title="F"
+setTimeout('document.title="F."',200)
+setTimeout('document.title="F.L"',400)
+setTimeout('document.title="F.L."',600)
+setTimeout('document.title="F.L.A"',800)
+setTimeout('document.title="F.L.A."',1000)
+setTimeout('document.title="F.L.A.M"',1200)
+setTimeout('document.title="F.L.A.M."',1400)
+setTimeout('document.title="F.L.A.M.E"',1600)
+setTimeout('document.title="F.L.A.M.E.S"',1800)
+setTimeout('document.title="F.L.A.M.E.S."',2000)
+setTimeout('document.title="F.L.A.M.E.S. -:- "',2200)
+setTimeout('document.title="F.L.A.M.E.S. -:- C"',2400)
+setTimeout('document.title="F.L.A.M.E.S. -:- Cr"',2600)
+setTimeout('document.title="F.L.A.M.E.S. -:- Crea"',2800)
+setTimeout('document.title="F.L.A.M.E.S. -:- Creat"',3000)
+setTimeout('document.title="F.L.A.M.E.S. -:- Created"',3200)
+setTimeout('document.title="F.L.A.M.E.S. -:- Created "',3400)
+setTimeout('document.title="F.L.A.M.E.S. -:- Created B"',3600)
+setTimeout('document.title="F.L.A.M.E.S. -:- Created By"',3800)
+setTimeout('document.title="F.L.A.M.E.S. -:- Created By K"',4000)
+setTimeout('document.title="F.L.A.M.E.S. -:- Created By Kh"',4200)
+setTimeout('document.title="F.L.A.M.E.S. -:- Created By Khe"',4600)
+setTimeout('document.title="F.L.A.M.E.S. -:- Created By Khem"',4800)
+setTimeout('document.title="F.L.A.M.E.S. -:- Created By Kheme"',5000)
+setTimeout('yes()',10000)
+}
+function Now() {
+document.f.n1.value=document.f.N1.value
+document.f.n2.value=document.f.N2.value
+document.f.subt.value=document.f.N1.value.length
+if (document.f.N1.value=='') {document.f.N1.value="I beg, enter the guy name here!";setTimeout('document.f.N2.value="And the girl name, here too!"',2000);return false}
+if (document.f.N2.value=='') {document.f.N2.value="I beg, enter the girl name here!";setTimeout('document.f.N1.value="And the guy name, here too!"',2000);return false}
+calc()
+return false
+}
+function calc() {
+if (document.f.subt.value=='0') {document.f.f.value=((Math.abs(document.f.n2.value.length))+(Math.abs(document.f.n1.value.length)));rit();return false}
+lent=document.f.N1.value.length
+subt=document.f.subt.value
+name=document.f.N1.value.toLowerCase()
+name2=document.f.N2.value.toLowerCase()
+na=name.charAt(lent-subt)
+na1=document.f.n2.value.toLowerCase().replace(na,'*')
+if (na1.indexOf('*')!='-1') {document.f.n2.value=document.f.n2.value.toLowerCase().replace(na,'');document.f.n1.value=document.f.n1.value.toLowerCase().replace(na,'')}
+document.f.subt.value=(Math.abs(document.f.subt.value)-1)
+setTimeout('calc()',1)
+return false
+}
+function rit() {
+if (document.f.f.value=='1' || document.f.f.value=='7' || document.f.f.value=='13' || document.f.f.value=='19' || document.f.f.value=='25' || document.f.f.value=='31' || document.f.f.value=='37' || document.f.f.value=='43' || document.f.f.value=='49' || document.f.f.value=='55') {
+document.getElementById('rit').innerHTML='The Results:<br>'+document.f.N1.value+' and '+document.f.N2.value+' are <b><u>Friends</i></u></b>.'
+}
+if (document.f.f.value=='2' || document.f.f.value=='8' || document.f.f.value=='14' || document.f.f.value=='20' || document.f.f.value=='26' || document.f.f.value=='32' || document.f.f.value=='38' || document.f.f.value=='44' || document.f.f.value=='50' || document.f.f.value=='56') {
+document.getElementById('rit').innerHTML='The Results:<br>'+document.f.N1.value+' is '+document.f.N2.value+'\'s <b><u>lover</b></u></i>.'
+}
+if (document.f.f.value=='3' || document.f.f.value=='9' || document.f.f.value=='15' || document.f.f.value=='21' || document.f.f.value=='27' || document.f.f.value=='33' || document.f.f.value=='39' || document.f.f.value=='45' || document.f.f.value=='51' || document.f.f.value=='57') {
+document.getElementById('rit').innerHTML='The Results:<br>'+document.f.N1.value+' is <b><u>About To Marry</u></i></b> '+document.f.N2.value+'.'
+}
+if (document.f.f.value=='4' || document.f.f.value=='10' || document.f.f.value=='16' || document.f.f.value=='22' || document.f.f.value=='28' || document.f.f.value=='34' || document.f.f.value=='40' || document.f.f.value=='46' || document.f.f.value=='52' || document.f.f.value=='58') {
+document.getElementById('rit').innerHTML='The Results:<br>'+document.f.N1.value+' is <b><u>Married</b></u></i> to '+document.f.N2.value+'.'
+}
+if (document.f.f.value=='5' || document.f.f.value=='11' || document.f.f.value=='17' || document.f.f.value=='23' || document.f.f.value=='29' || document.f.f.value=='35' || document.f.f.value=='41' || document.f.f.value=='47' || document.f.f.value=='53' || document.f.f.value=='59') {
+document.getElementById('rit').innerHTML='The Results:<br>'+document.f.N1.value+' is '+document.f.N2.value+'\'s <b><u>Enemy!</b></u></i>'
+}
+if (document.f.f.value=='6' || document.f.f.value=='12' || document.f.f.value=='18' || document.f.f.value=='24' || document.f.f.value=='30' || document.f.f.value=='36' || document.f.f.value=='42' || document.f.f.value=='48' || document.f.f.value=='54' || document.f.f.value=='60') {
+document.getElementById('rit').innerHTML='The Results:<br>'+document.f.N1.value+' and '+document.f.N2.value+' are <b><u>Sepatrated!</b></u></i>'
+}
+}
+</script>
+<div align="center">
+<table border="1" borderColor="#000000" borderColorDark="#808080" borderColorLight="#c0c0c0" cellPadding="0" cellSpacing="0" width="90%">
+<tr>
+<td align="right" borderColor="#000000" borderColorDark="#808080" borderColorLight="#c0c0c0" vAlign="top" width="26%">
+<p align="right">First Name:</p>
+</td>
+<center>
+<td align="left" borderColor="#000000" borderColorDark="#808080" borderColorLight="#c0c0c0" vAlign="top" width="74%"><input name="N1" onclick="if (document.f.N1.value==&quot;And the guy name, here too!&quot;) {document.f.N1.value=&quot;&quot;};if (document.f.N1.value==&quot;I beg, enter the guy name here!&quot;) {document.f.N1.value=&quot;&quot;}" size="30">
+<font face="Arial" size="1">(male preferably)</font></td>
+</tr>
+</center>
+<tr>
+<td align="right" borderColor="#000000" borderColorDark="#808080" borderColorLight="#c0c0c0" vAlign="top" width="26%">
+<p align="right">Second Name:</p>
+</td>
+<center>
+<td align="left" borderColor="#000000" borderColorDark="#808080" borderColorLight="#c0c0c0" vAlign="top" width="74%"><input name="N2" onclick="if (document.f.N2.value==&quot;And the girl name, here too!&quot;) {document.f.N2.value=&quot;&quot;};if (document.f.N2.value==&quot;I beg, enter the girl name here!&quot;) {document.f.N2.value=&quot;&quot;}" size="30">
+<font face="Arial" size="1">(Female preferably)</font></td>
+</tr>
+<tr>
+<td borderColor="#000000" borderColorDark="#808080" borderColorLight="#c0c0c0" colSpan="2" width="100%">
+<p align="center"><input type="submit" value="Calculate"></p>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<center>
+<div id="rit">&nbsp;</div>
+</center>
+</form>
+</body>
+</html>

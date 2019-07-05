@@ -1,0 +1,15 @@
+<center><b><input readonly type=text size=10 style="height:50;" id=t><br>RGB Value: <input readonly type=text size=15 id=tt>
+<br /><script>
+window.resizeTo(280,220)
+window.onload=n
+document.write("<body bgcolor='threedface'>")
+function n(id) {
+tt.value="rgb("+document.getElementById('r').scrollLeft+","+document.getElementById('g').scrollLeft+","+document.getElementById('b').scrollLeft+")"
+t.style.background="rgb("+document.getElementById('r').scrollLeft+","+document.getElementById('g').scrollLeft+","+document.getElementById('b').scrollLeft+")"
+t.value="rgb("+document.getElementById('r').scrollLeft+","+document.getElementById('g').scrollLeft+","+document.getElementById('b').scrollLeft+")"
+}
+</script>
+<br /><font color=red>RED: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input readonly onscroll=n(this.id) type=text id=r value="................................................................................................................." size=11 style="overflow-x:scroll;overflow-y:none;height:20"></font>
+<br /><font color=blue>BLUE: &nbsp;&nbsp;&nbsp;<input readonly onscroll=n(this.id) type=text id=b value="................................................................................................................." size=11 style="overflow-x:scroll;overflow-y:none;height:20"></font>
+<br /><font color=green>GREEN: <input readonly onscroll=n(this.id) value="................................................................................................................." size=11 style="overflow-x:scroll;overflow-y:none;height:20" id=g></font>
+</b></center>

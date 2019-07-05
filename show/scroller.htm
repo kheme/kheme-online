@@ -1,0 +1,30 @@
+<form name=form>
+<title>Scroller</title>
+<body onload=let_()>
+<input type=text size=60 style="height:50; width:460" id=show>
+</form>
+<script>
+word="This and a whole lot more can be done with javascripts! wow! This is just too much!"
+l=word.length+1
+ll=word.length
+lll=word.length
+
+function let_() {
+if (ll=="-1") {lll=l;ll=l}
+if (lll>"-1") {
+form.show.value=word.substr(0,l-lll);
+window.status=word.substr(0,l-lll);
+document.title=word.substr(0,l-lll+1);
+lll=lll-1
+}
+
+if (lll=="-1") {
+form.show.value=word.substr(l-ll,l);
+window.status=word.substr(l-ll,l);
+document.title=word.substr(l-ll-1,l);
+ll=ll-1
+}
+
+setTimeout("let_()",100)
+}
+</script>
